@@ -21,9 +21,21 @@
             </div>
             <p class="author">{{ post.author }}</p>
 
-            <form action="{{ url_for('delete', post_id=post.id) }}" method="POST" class="delete-form">
-                <input type="submit" value="Delete">
+            <form class="post-actions" method="POST">
+            <button type="submit"
+                    formaction="{{ url_for('delete', post_id=post.id) }}"
+                    formmethod="post"
+                    class="btn-delete">
+                Delete
+            </button>
+            <button type="submit"
+                    formaction="{{ url_for('update', post_id=post.id) }}"
+                    formmethod="get"
+                    class="btn-update">
+                Update
+            </button>
             </form>
+
         </div>
     {% endfor %}
 </body>

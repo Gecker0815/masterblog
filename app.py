@@ -1,4 +1,4 @@
-from flask import Flask, redirect, request, render_template
+from flask import Flask, redirect, request, render_template, url_for
 from storage import Storage
 
 app = Flask(__name__)
@@ -36,6 +36,21 @@ def delete(post_id):
         return redirect('/')
     except ValueError as e:
         return f"<p>Error: {e}</p>"
+
+@app.route('/update/<int:post_id>', methods=['GET', 'POST'])
+def update(post_id):
+    post = data.read(post_id)
+    if post is None:
+        return "Post not found", 404
+
+    if request.method == 'POST':
+        title = request.form.get('title') or post['title']
+        content = request.form.get('content') or post['content']
+
+        data.update(post_id, title, content)
+        return redirect(url_for('index'))
+
+    return render_template('update.html', post=post)
 
 
 if __name__ == '__main__':
