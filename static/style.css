@@ -15,7 +15,6 @@ body.scroll {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
-
 h1 {
     text-align: center;
     color: #2c3e50;
@@ -59,8 +58,7 @@ h1 {
     line-height: 1.6;
 }
 
-/* Einheitliches Formular-Styling */
-form {
+form.centered-form {
     max-width: 600px;
     margin: 0 auto;
     padding: 30px 25px;
@@ -70,14 +68,14 @@ form {
     box-sizing: border-box;
 }
 
-form label {
+.centered-form label {
     display: block;
     margin: 10px 0 5px;
     font-weight: bold;
     color: #2c3e50;
 }
 
-form input[type="text"] {
+.centered-form input[type="text"] {
     width: 100%;
     padding: 10px 12px;
     margin-bottom: 15px;
@@ -86,12 +84,12 @@ form input[type="text"] {
     box-sizing: border-box;
 }
 
-form input[type="text"]:focus {
+.centered-form input[type="text"]:focus {
     border-color: #3498db;
     outline: none;
 }
 
-form input[type="submit"] {
+.centered-form input[type="submit"] {
     background-color: #3498db;
     color: white;
     font-weight: bold;
@@ -103,7 +101,7 @@ form input[type="submit"] {
     width: 100%;
 }
 
-form input[type="submit"]:hover {
+.centered-form input[type="submit"]:hover {
     background-color: #2980b9;
 }
 
@@ -120,7 +118,6 @@ form input[type="submit"]:hover {
     padding: 10px 16px;
     text-decoration: none;
     border-radius: 6px;
-    box-shadow: 0 2px 6px rgba(0,0,0,0.1);
     transition: background-color 0.2s ease;
 }
 
@@ -128,3 +125,31 @@ form input[type="submit"]:hover {
     background-color: #2980b9;
 }
 
+.delete-form {
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 10px;
+}
+
+.delete-form input[type="submit"] {
+    background: none;
+    border: none;
+    color: #e74c3c;
+    font-weight: bold;
+    font-size: 0.9em;
+    cursor: pointer;
+    padding: 0;
+    border-radius: 0;
+    text-align: right;
+    transition: color 0.2s ease;
+}
+
+.delete-form input[type="submit"]:hover {
+    color: #c0392b;
+}
+
+.action-bar {
+    margin-bottom: 30px;
+    text-align: left;
+}
