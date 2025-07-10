@@ -171,3 +171,19 @@ h1 {
     text-align: center;
     font-weight: 550;
 }
+
+.btn-like {
+    background-color: #ff69b4;
+    color: white;
+    font-weight: bold;
+    padding: 8px 14px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 0.95em;
+    transition: background-color 0.2s ease;
+}
+
+.btn-like:hover {
+    background-color: #e055a0;
+}

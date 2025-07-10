@@ -52,6 +52,10 @@ def update(post_id):
 
     return render_template('update.html', post=post)
 
+@app.route('/like/<int:post_id>', methods=['GET', 'POST'])
+def like(post_id):
+    data.like(post_id, 1)
+    return redirect('/')
 
 if __name__ == '__main__':
     app.run(host="0.0.0.0", port=5000, debug=True)

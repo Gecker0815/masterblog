@@ -35,6 +35,7 @@ class Storage:
             raise ValueError("Post should not include 'id'; it is auto-assigned.")
 
         post["id"] = self.generate_unique_id()
+        post["likes"] = 0
         self.posts.append(post)
         self.save()
         print(f"Added post with ID {post['id']}")
@@ -49,7 +50,24 @@ class Storage:
 
         raise ValueError(f"No post found with ID {post_id}")
 
-    def update(self, post_id, title=None, content=None):
+    def like(self, post_id, like=None):
+        if not isinstance(post_id, int):
+            raise TypeError("ID must be an integer.")
+
+        for post in self.posts:
+            if post.get("id") == post_id:
+                if like is not None:
+                    if not isinstance(like, int):
+                        raise TypeError("Like must be an integer.")
+                    post["likes"] = post.get("likes", 0) + 1
+
+                self.save()
+                print(f"Post with ID {post_id} has been updated.")
+                return
+
+        raise ValueError(f"No post found with ID {post_id}")
+
+    def update(self, post_id, title=None, content=None, like=None):
         if not isinstance(post_id, int):
             raise TypeError("ID must be an integer.")
 
@@ -67,6 +85,11 @@ class Storage:
                     if not isinstance(content, str):
                         raise TypeError("Content must be a string.")
                     post["content"] = content
+
+                if like is not None:
+                    if not isinstance(like, int):
+                        raise TypeError("Like must be an integer.")
+                    post["likes"] += like
 
                 self.save()
                 print(f"Post with ID {post_id} has been updated.")

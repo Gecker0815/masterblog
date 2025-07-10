@@ -1,9 +1,51 @@
 [
-    {"id": 1, "author": "John Doe", "title": "First Post", "content": "This is my first post."},
-    {"id": 2, "author": "Jane Doe", "title": "Second Post", "content": "This is another post."},
-    {"id": 3, "author": "Alice Smith", "title": "Third Post", "content": "Here's a new perspective on things."},
-    {"id": 4, "author": "Bob Johnson", "title": "Fourth Entry", "content": "Sharing some thoughts today."},
-    {"id": 5, "author": "Charlie Lee", "title": "Fifth Note", "content": "Just wanted to say hello."},
-    {"id": 6, "author": "Diana Prince", "title": "Sixth Update", "content": "Here's a quick status update."},
-    {"id": 7, "author": "Elliot Brown", "title": "Seventh Log", "content": "Documenting my progress."}
+    {
+        "id": 1,
+        "author": "John Doe",
+        "title": "First Post",
+        "content": "This is my first post.",
+        "likes": 5
+    },
+    {
+        "id": 2,
+        "author": "Jane Doe",
+        "title": "Second Post",
+        "content": "This is another post.",
+        "likes": 27
+    },
+    {
+        "id": 3,
+        "author": "Alice Smith",
+        "title": "Third Post",
+        "content": "Here's a new perspective on things.",
+        "likes": 8
+    },
+    {
+        "id": 4,
+        "author": "Bob Johnson",
+        "title": "Fourth Entry",
+        "content": "Sharing some thoughts today.",
+        "likes": 7
+    },
+    {
+        "id": 5,
+        "author": "Charlie Lee",
+        "title": "Fifth Note",
+        "content": "Just wanted to say hello.",
+        "likes": 0
+    },
+    {
+        "id": 6,
+        "author": "Diana Prince",
+        "title": "Sixth Update",
+        "content": "Here's a quick status update.",
+        "likes": 89
+    },
+    {
+        "id": 7,
+        "author": "Elliot Brown",
+        "title": "Seventh Log",
+        "content": "Documenting my progress.",
+        "likes": 15
+    }
 ]
